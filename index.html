@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#070812">
+<title>Quiz Hub</title>
+<script>document.documentElement.classList.add('js-anim');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="./" id="brandHome">
+        <span class="brand-mark">QH</span>
+        <span class="brand-text">QUIZ <b>HUB</b></span>
+      </a>
+      <div class="topbar-actions">
+        <span class="status-pill ok" id="hubStatus">Giochi live</span>
+        <span class="pill">Apri in nuova scheda</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="view" data-view="dashboard">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Dashboard</span>
+          <h1>Scegli il gioco. Apri la stanza. Gioca.</h1>
+          <p>Quattro esperienze live complete, ognuna con la sua regia, il suo QR e la sua sincronizzazione. Scegli un gioco e aprilo in una nuova scheda.</p>
+          <div class="hero-badges">
+            <span class="pill">4 giochi</span>
+            <span class="pill">Multiplayer live</span>
+            <span class="pill">MQTT + QR</span>
+          </div>
+        </div>
+
+        <aside class="join-card how-card">
+          <span class="eyebrow">Come funziona</span>
+          <div class="how-list">
+            <div class="how-step">
+              <span>1</span>
+              <div>
+                <strong>Scegli il gioco</strong>
+                <small>Filtra o cerca tra i quattro titoli disponibili.</small>
+              </div>
+            </div>
+            <div class="how-step">
+              <span>2</span>
+              <div>
+                <strong>Apri l'app</strong>
+                <small>Ogni gioco si apre in una nuova scheda, pronto da usare.</small>
+              </div>
+            </div>
+            <div class="how-step">
+              <span>3</span>
+              <div>
+                <strong>Condividi la stanza</strong>
+                <small>Mostra il QR o il codice ai giocatori e avvia la partita.</small>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="toolbar">
+        <input id="gameSearch" class="input" type="search" placeholder="Cerca un gioco…" autocomplete="off">
+        <select id="gameTypeFilter" class="input" aria-label="Filtra per categoria">
+          <option value="">Tutte le categorie</option>
+          <option value="live">Live</option>
+          <option value="party">Party</option>
+        </select>
+      </div>
+
+      <div id="gameGrid" class="game-grid" aria-live="polite"></div>
+      <p class="hub-footer">I giochi mantengono le loro impostazioni, il loro store locale e la loro sincronizzazione MQTT.</p>
+    </section>
+  </main>
+</div>
+
+<script src="node_modules/animejs/dist/bundles/anime.umd.min.js"></script>
+<script src="games-registry.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
